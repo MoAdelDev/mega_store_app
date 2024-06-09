@@ -36,7 +36,9 @@ class LoginScreen extends StatelessWidget {
                 const LoginWithThirdyParty(),
                 verticalSpace(8),
                 CustomTextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.pushReplacment(Routes.forgetPassword);
+                  },
                   text: 'Forgot Password?',
                   textColor: context.colorScheme.primary,
                 ),
