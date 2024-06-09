@@ -20,6 +20,8 @@ class CustomTextField extends StatelessWidget {
   final bool readOnly;
   final Color? suffixIconColor;
   final int? maxLines;
+  final String? Function(String?)? validator;
+
   const CustomTextField({
     super.key,
     required this.controller,
@@ -37,6 +39,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly = false,
     this.suffixIconColor,
     this.maxLines = 1,
+    this.validator,
   });
 
   @override
@@ -66,7 +69,12 @@ class CustomTextField extends StatelessWidget {
               }
               return context.colorScheme.tertiary;
             }),
-            prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+            prefixIcon: prefixIcon != null
+                ? Icon(
+                    prefixIcon,
+                    color: context.colorScheme.tertiary,
+                  )
+                : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
               borderSide: BorderSide(color: context.colorScheme.secondary),
@@ -93,7 +101,7 @@ class CustomTextField extends StatelessWidget {
               onTap: onSuffixIcon ?? () {},
               child: Icon(
                 suffixIcon,
-                color: suffixIconColor ?? context.colorScheme.outlineVariant,
+                color: suffixIconColor ?? context.colorScheme.tertiary,
               ),
             ),
             contentPadding: EdgeInsets.symmetric(
@@ -107,14 +115,13 @@ class CustomTextField extends StatelessWidget {
           maxLines: maxLines,
           textAlign: TextAlign.start,
           obscureText: obscureText ?? false,
-          validator: errorMsg == ''
-              ? null
-              : (value) {
-                  if (value == null || value.isEmpty) {
-                    return errorMsg;
-                  }
-                  return null;
-                },
+          validator: validator ??
+              (value) {
+                if (value == null || value.isEmpty) {
+                  return errorMsg;
+                }
+                return null;
+              },
           onChanged: onChange,
         ),
       ],
