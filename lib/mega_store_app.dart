@@ -16,8 +16,8 @@ class MegaStoreApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeManager.light('en'),
-        initialRoute: Routes.splash,
+        theme: ThemeManager.light(),
+        initialRoute: Routes.login,
         onGenerateRoute: RouteManager().onGenerateRoute,
       ),
     );

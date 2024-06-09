@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mega_store_app/core/router/routes.dart';
+import 'package:mega_store_app/features/login/login_screen.dart';
 
 class RouteManager {
   Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.splash:
+      case Routes.login:
         {
-          return _getMaterialPageRoute(const Scaffold());
+          return _getMaterialPageRoute(const LoginScreen());
         }
     }
 
