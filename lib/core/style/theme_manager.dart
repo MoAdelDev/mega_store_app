@@ -5,11 +5,12 @@ import 'package:mega_store_app/core/style/font_weight_helper.dart';
 
 class ThemeManager {
   ThemeManager._();
-  static ThemeData light(String locale) => ThemeData(
+  static ThemeData light() => ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.light(
           primary: ColorLightManager.primary,
           secondary: ColorLightManager.secondary,
+          tertiary: ColorLightManager.tertiary,
           onPrimary: ColorLightManager.onPrimary,
           onSecondary: ColorLightManager.onSecondary,
           onSurface: ColorLightManager.onSurface,
@@ -40,7 +41,7 @@ class ThemeManager {
           ),
         ),
         scaffoldBackgroundColor: ColorLightManager.background,
-        fontFamily: locale == 'ar' ? 'Cairo' : 'SourceSans3',
+        fontFamily: 'Poppins',
         textTheme: TextTheme(
           titleLarge: TextStyle(
             color: ColorLightManager.onBackground,
@@ -73,17 +74,17 @@ class ThemeManager {
             fontSize: 12.sp,
           ),
           labelLarge: TextStyle(
-            color: ColorLightManager.onBackground,
+            color: ColorLightManager.tertiary,
             fontWeight: FontWeightHelper.regular,
             fontSize: 16.sp,
           ),
           labelMedium: TextStyle(
-            color: ColorLightManager.onBackground,
+            color: ColorLightManager.tertiary,
             fontWeight: FontWeightHelper.regular,
             fontSize: 14.sp,
           ),
           labelSmall: TextStyle(
-            color: ColorLightManager.onBackground,
+            color: ColorLightManager.tertiary,
             fontWeight: FontWeightHelper.regular,
             fontSize: 12.sp,
           ),
