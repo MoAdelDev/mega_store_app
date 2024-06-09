@@ -10,7 +10,8 @@ class ColorLightManager {
   static const Color onPrimary = Color(0xFFFFFFFF);
   static const Color onSecondary = Color(0xFFFFFFFF);
   static const Color onSurface = Color(0xFF000000);
-  static const Color error = Color.fromARGB(255, 10, 17, 210);
+  static const Color error = Color(0xffFB7181);
   static const Color onError = Color(0xFFFFFFFF);
   static const Color grey = Color(0xff717171);
+  static const Color outline = Color(0xffEBF0FF);
 }

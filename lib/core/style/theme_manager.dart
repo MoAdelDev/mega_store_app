@@ -7,7 +7,7 @@ class ThemeManager {
   ThemeManager._();
   static ThemeData light() => ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: ColorLightManager.primary,
           secondary: ColorLightManager.secondary,
           tertiary: ColorLightManager.tertiary,
@@ -18,7 +18,7 @@ class ThemeManager {
           surface: ColorLightManager.surface,
           brightness: Brightness.light,
           error: ColorLightManager.error,
-          outline: ColorLightManager.grey.withOpacity(0.3),
+          outline: ColorLightManager.outline,
           outlineVariant: ColorLightManager.grey,
         ),
         appBarTheme: AppBarTheme(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
+import 'package:mega_store_app/core/style/font_weight_helper.dart';
 import 'package:mega_store_app/core/widgets/custom_text.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -23,14 +24,15 @@ class CustomTextButton extends StatelessWidget {
         ),
         shape: const WidgetStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(5)),
           ),
         ),
       ),
       child: CustomText(
         text,
-        style: context.textTheme.bodyLarge,
+        style: context.textTheme.labelSmall,
         color: textColor,
+        fontWeight: FontWeightHelper.bold,
       ),
     );
   }

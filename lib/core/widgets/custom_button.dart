@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
+import 'package:mega_store_app/core/style/font_weight_helper.dart';
 import 'package:mega_store_app/core/widgets/custom_text.dart';
 
 class CustomButton extends StatelessWidget {
@@ -26,10 +27,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: isExpand ? double.infinity : width,
-      height: height ?? 40.h,
+      height: height ?? 55.h,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(8),
         color: context.colorScheme.primary,
       ),
       child: MaterialButton(
@@ -43,8 +44,9 @@ class CustomButton extends StatelessWidget {
             ? child
             : CustomText(
                 label ?? '',
-                style: context.textTheme.titleMedium,
+                style: context.textTheme.bodyLarge,
                 color: Colors.white,
+                fontWeight: FontWeightHelper.bold,
               ),
       ),
     );

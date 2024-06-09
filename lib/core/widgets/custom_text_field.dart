@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
+import 'package:mega_store_app/core/style/font_weight_helper.dart';
 import 'package:mega_store_app/core/widgets/custom_tap.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -66,31 +68,27 @@ class CustomTextField extends StatelessWidget {
             }),
             prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(5.0),
               borderSide: BorderSide(color: context.colorScheme.secondary),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
-              borderSide: const BorderSide(color: Color(0xffEBF0FF)),
+              borderRadius: BorderRadius.circular(5.0),
+              borderSide: BorderSide(color: context.colorScheme.outline),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(5.0),
               borderSide: BorderSide(
                 color: context.colorScheme.error,
               ),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(5.0),
               borderSide: BorderSide(color: context.colorScheme.secondary),
             ),
-            fillColor: const Color(0xffF7F8F9),
+            fillColor: Colors.transparent,
             filled: true,
             hintText: hintText,
-            alignLabelWithHint: true,
-            hintStyle: TextStyle(
-              fontSize: 14.0,
-              color: context.colorScheme.outlineVariant,
-            ),
+            hintStyle: context.textTheme.labelSmall,
             suffixIcon: CustomTap(
               onTap: onSuffixIcon ?? () {},
               child: Icon(
@@ -98,12 +96,14 @@ class CustomTextField extends StatelessWidget {
                 color: suffixIconColor ?? context.colorScheme.outlineVariant,
               ),
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              vertical: 15.0,
-              horizontal: 10.0,
+            contentPadding: EdgeInsets.symmetric(
+              vertical: 15.0.h,
+              horizontal: 10.0.w,
             ),
           ),
-          style: context.textTheme.labelSmall,
+          style: context.textTheme.labelSmall?.copyWith(
+            fontWeight: FontWeightHelper.bold,
+          ),
           maxLines: maxLines,
           textAlign: TextAlign.start,
           obscureText: obscureText ?? false,
