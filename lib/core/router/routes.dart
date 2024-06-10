@@ -8,4 +8,6 @@ class Routes {
   static const String categoryProducts = '/category-products';
 
   static const String productDetails = '/product-details';
+
+  static const String productReviews = '/product-reviews';
 }
