@@ -4,6 +4,7 @@ import 'package:icon_broken/icon_broken.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
 import 'package:mega_store_app/core/style/font_weight_helper.dart';
+import 'package:mega_store_app/features/categories/categories_screen.dart';
 import 'package:mega_store_app/features/favorites/favorites_screen.dart';
 import 'package:mega_store_app/features/home/products_screen.dart';
 
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> screens = [
     const ProductsScreen(),
     Container(),
-    Container(),
+    const CategoriesScreen(),
     const FavoritesScreen(),
   ];
   @override
