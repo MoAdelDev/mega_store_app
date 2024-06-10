@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icon_broken/icon_broken.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
 import 'package:mega_store_app/core/style/font_weight_helper.dart';
+import 'package:mega_store_app/features/favorites/favorites_screen.dart';
 import 'package:mega_store_app/features/home/products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,22 +19,22 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> labels = [
     'Home',
     'Account',
-    'Offer',
+    'Categories',
     'Favorite',
   ];
 
   final List<IconData> iconsOutline = [
-    Icons.home_outlined,
-    Icons.person_outline,
-    Icons.local_offer_outlined,
-    Icons.favorite_outline,
+    IconBroken.Home,
+    IconBroken.Profile,
+    IconBroken.Category,
+    IconBroken.Heart,
   ];
 
   final List<Widget> screens = [
     const ProductsScreen(),
     Container(),
     Container(),
-    Container(),
+    const FavoritesScreen(),
   ];
   @override
   Widget build(BuildContext context) {
