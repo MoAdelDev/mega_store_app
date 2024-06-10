@@ -5,6 +5,7 @@ import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
 import 'package:mega_store_app/core/style/custom_shimmer.dart';
 import 'package:mega_store_app/core/style/font_weight_helper.dart';
+import 'package:mega_store_app/core/widgets/custom_button.dart';
 import 'package:mega_store_app/core/widgets/custom_text.dart';
 import 'package:mega_store_app/features/product_reviews/data/review_model.dart';
 
@@ -76,80 +77,97 @@ class _ProductReviewsScreenState extends State<ProductReviewsScreen> {
         ),
       ),
       body: SafeArea(
-        child: ListView.separated(
+        child: Padding(
           padding: EdgeInsets.symmetric(
-            vertical: 10.h,
             horizontal: 20.w,
           ),
-          itemBuilder: (context, index) => Column(
+          child: Column(
             children: [
-              Row(
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: reviews[index].image,
-                    width: 70.w,
-                    height: 70.h,
-                    fit: BoxFit.cover,
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
-                    placeholder: (context, url) => const CustomShimmer(),
-                    imageBuilder: (context, imageProvider) => Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: imageProvider,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
+              Expanded(
+                child: ListView.separated(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10.h,
                   ),
-                  horizontalSpace(10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  itemBuilder: (context, index) => Column(
                     children: [
-                      CustomText(
-                        reviews[index].name,
-                        style: context.textTheme.labelMedium,
-                        fontWeight: FontWeightHelper.bold,
-                        color: const Color(0xff223263),
-                      ),
-                      verticalSpace(3),
                       Row(
                         children: [
-                          ...List.generate(
-                            reviews[index].rating,
-                            (index) => const Icon(
-                              Icons.star,
-                              color: Color(0xffFFC833),
+                          CachedNetworkImage(
+                            imageUrl: reviews[index].image,
+                            width: 70.w,
+                            height: 70.h,
+                            fit: BoxFit.cover,
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                            placeholder: (context, url) =>
+                                const CustomShimmer(),
+                            imageBuilder: (context, imageProvider) => Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: imageProvider,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ),
-                          ...List.generate(
-                            5 - reviews[index].rating,
-                            (index) => const Icon(
-                              Icons.star,
-                              color: Color(0xffEBF0FF),
-                            ),
+                          horizontalSpace(10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(
+                                reviews[index].name,
+                                style: context.textTheme.labelMedium,
+                                fontWeight: FontWeightHelper.bold,
+                                color: const Color(0xff223263),
+                              ),
+                              verticalSpace(3),
+                              Row(
+                                children: [
+                                  ...List.generate(
+                                    reviews[index].rating,
+                                    (index) => const Icon(
+                                      Icons.star,
+                                      color: Color(0xffFFC833),
+                                    ),
+                                  ),
+                                  ...List.generate(
+                                    5 - reviews[index].rating,
+                                    (index) => const Icon(
+                                      Icons.star,
+                                      color: Color(0xffEBF0FF),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ],
                       ),
+                      verticalSpace(8),
+                      CustomText(
+                        reviews[index].comment,
+                        style: context.textTheme.labelSmall,
+                      ),
+                      verticalSpace(12),
+                      CustomText(
+                        reviews[index].date,
+                        style: context.textTheme.labelSmall,
+                      )
                     ],
                   ),
-                ],
-              ),
-              verticalSpace(8),
-              CustomText(
-                reviews[index].comment,
-                style: context.textTheme.labelSmall,
+                  separatorBuilder: (context, index) => verticalSpace(10),
+                  itemCount: reviews.length,
+                ),
               ),
               verticalSpace(12),
-              CustomText(
-                reviews[index].date,
-                style: context.textTheme.labelSmall,
-              )
+              CustomButton(
+                onPressed: () {},
+                label: 'Write Review',
+                backgroundColor: context.colorScheme.secondary,
+              ),
             ],
           ),
-          separatorBuilder: (context, index) => verticalSpace(10),
-          itemCount: reviews.length,
         ),
       ),
     );

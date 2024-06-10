@@ -26,8 +26,9 @@ class ThemeManager {
           backgroundColor: ColorLightManager.background,
           foregroundColor: ColorLightManager.onBackground,
           surfaceTintColor: ColorLightManager.background,
+          shadowColor: ColorLightManager.tertiary,
           centerTitle: false,
-          elevation: 0,
+          elevation: 0.2,
           iconTheme: const IconThemeData(
             color: ColorLightManager.onBackground,
           ),
