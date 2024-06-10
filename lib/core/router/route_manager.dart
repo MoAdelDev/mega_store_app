@@ -5,6 +5,7 @@ import 'package:mega_store_app/features/home/home_screen.dart';
 import 'package:mega_store_app/features/login/forget_password_screen.dart';
 import 'package:mega_store_app/features/login/login_screen.dart';
 import 'package:mega_store_app/features/product_details/product_details_screen.dart';
+import 'package:mega_store_app/features/product_reviews/product_reviews_screen.dart';
 import 'package:mega_store_app/features/register/register_screen.dart';
 
 class RouteManager {
@@ -27,6 +28,9 @@ class RouteManager {
 
       case Routes.productDetails:
         return _getMaterialPageRoute(const ProductDetailsScreen());
+
+      case Routes.productReviews:
+        return _getMaterialPageRoute(const ProductReviewsScreen());
 
       default:
         {
