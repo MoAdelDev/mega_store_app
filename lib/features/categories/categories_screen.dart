@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
+import 'package:mega_store_app/core/router/routes.dart';
 import 'package:mega_store_app/core/style/custom_shimmer.dart';
 import 'package:mega_store_app/core/widgets/custom_text.dart';
 import 'package:mega_store_app/features/home/data/category_model.dart';
@@ -69,43 +70,48 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         childAspectRatio: 0.85,
         children: categories
             .map(
-              (category) => Column(
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: category.image,
-                    fit: BoxFit.cover,
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => Container(
-                      width: 80.w,
-                      height: 80.h,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
+              (category) => GestureDetector(
+                onTap: () {
+                  context.push(Routes.categoryProducts);
+                },
+                child: Column(
+                  children: [
+                    CachedNetworkImage(
+                      imageUrl: category.image,
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => Container(
+                        width: 80.w,
+                        height: 80.h,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: const CustomShimmer(),
                       ),
-                      child: const CustomShimmer(),
-                    ),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
-                    imageBuilder: (context, image) => Container(
-                      width: 80.w,
-                      height: 80.h,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: image,
-                          fit: BoxFit.cover,
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                      imageBuilder: (context, image) => Container(
+                        width: 80.w,
+                        height: 80.h,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: image,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  verticalSpace(5),
-                  CustomText(
-                    category.name,
-                    style: context.textTheme.labelSmall,
-                    color: const Color(0xff50555C),
-                  ),
-                ],
+                    verticalSpace(5),
+                    CustomText(
+                      category.name,
+                      style: context.textTheme.labelSmall,
+                      color: const Color(0xff50555C),
+                    ),
+                  ],
+                ),
               ),
             )
             .toList(),

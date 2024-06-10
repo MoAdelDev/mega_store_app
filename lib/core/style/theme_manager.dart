@@ -38,7 +38,7 @@ class ThemeManager {
           titleTextStyle: TextStyle(
             color: ColorLightManager.onBackground,
             fontWeight: FontWeightHelper.bold,
-            fontSize: 20.sp,
+            fontSize: 16.sp,
           ),
         ),
         scaffoldBackgroundColor: ColorLightManager.background,
