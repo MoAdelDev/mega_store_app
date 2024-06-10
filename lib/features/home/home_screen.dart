@@ -37,9 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
     const CategoriesScreen(),
     const FavoritesScreen(),
   ];
+  final List<String> titles = [
+    'Home',
+    'Account',
+    'Categories',
+    'Favorite',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          titles[currentIndex],
+        ),
+        centerTitle: true,
+      ),
       bottomNavigationBar: Container(
         height: 85.h,
         padding: EdgeInsets.symmetric(
@@ -62,9 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: screens[currentIndex],
-      ),
+      body: screens[currentIndex],
     );
   }
 
