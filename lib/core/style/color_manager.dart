@@ -15,4 +15,5 @@ class ColorLightManager {
   static const Color onError = Color(0xFFFFFFFF);
   static const Color grey = Color(0xff717171);
   static const Color outline = Color(0xffEBF0FF);
+  static const Color outlineVarient = Color(0xff50555C);
 }

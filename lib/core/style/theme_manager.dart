@@ -20,7 +20,7 @@ class ThemeManager {
           brightness: Brightness.light,
           error: ColorLightManager.error,
           outline: ColorLightManager.outline,
-          outlineVariant: ColorLightManager.grey,
+          outlineVariant: ColorLightManager.outlineVarient,
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: ColorLightManager.background,
