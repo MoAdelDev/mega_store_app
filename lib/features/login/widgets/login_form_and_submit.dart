@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
+import 'package:mega_store_app/core/router/routes.dart';
 import 'package:mega_store_app/core/widgets/custom_button.dart';
 import 'package:mega_store_app/core/widgets/custom_text_field.dart';
 
@@ -48,7 +50,9 @@ class _LoginFormAndSubmitState extends State<LoginFormAndSubmit> {
           CustomButton(
             label: 'Sign in',
             onPressed: () {
-              if (formKey.currentState!.validate()) {}
+              if (formKey.currentState!.validate()) {
+                context.pushAndRemoveUntil(Routes.home);
+              }
             },
           ),
         ],
