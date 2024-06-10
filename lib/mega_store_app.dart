@@ -17,7 +17,7 @@ class MegaStoreApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeManager.light(),
-        initialRoute: Routes.login,
+        initialRoute: Routes.home,
         onGenerateRoute: RouteManager().onGenerateRoute,
       ),
     );
