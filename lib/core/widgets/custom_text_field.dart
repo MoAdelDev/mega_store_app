@@ -53,7 +53,7 @@ class CustomTextField extends StatelessWidget {
           onFieldSubmitted: onSubmit,
           onTap: onTap,
           readOnly: readOnly,
-          cursorColor: context.colorScheme.secondary,
+          cursorColor: context.colorScheme.primaryContainer,
           textInputAction: textInputAction,
           decoration: InputDecoration(
             errorStyle: context.textTheme.bodyMedium?.copyWith(
@@ -62,7 +62,7 @@ class CustomTextField extends StatelessWidget {
             prefixIconColor:
                 WidgetStateColor.resolveWith((Set<WidgetState> states) {
               if (states.contains(WidgetState.focused)) {
-                return context.colorScheme.secondary;
+                return context.colorScheme.primaryContainer;
               }
               if (states.contains(WidgetState.error)) {
                 return context.colorScheme.error;
@@ -72,12 +72,12 @@ class CustomTextField extends StatelessWidget {
             prefixIcon: prefixIcon != null
                 ? Icon(
                     prefixIcon,
-                    color: context.colorScheme.tertiary,
                   )
                 : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(color: context.colorScheme.secondary),
+              borderSide:
+                  BorderSide(color: context.colorScheme.primaryContainer),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
@@ -91,7 +91,9 @@ class CustomTextField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(color: context.colorScheme.secondary),
+              borderSide: BorderSide(
+                color: context.colorScheme.primaryContainer,
+              ),
             ),
             fillColor: Colors.transparent,
             filled: true,

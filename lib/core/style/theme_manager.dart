@@ -9,6 +9,7 @@ class ThemeManager {
         useMaterial3: true,
         colorScheme: const ColorScheme.light(
           primary: ColorLightManager.primary,
+          primaryContainer: ColorLightManager.primaryContainer,
           secondary: ColorLightManager.secondary,
           tertiary: ColorLightManager.tertiary,
           onPrimary: ColorLightManager.onPrimary,

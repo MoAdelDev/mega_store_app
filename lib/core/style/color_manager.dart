@@ -3,7 +3,8 @@ import 'dart:ui';
 class ColorLightManager {
   static const Color background = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFFED1C24);
-  static const Color secondary = Color(0xFF40BFFF);
+  static const Color primaryContainer = Color(0xFF40BFFF);
+  static const Color secondary = Color(0xFFBA6400);
   static const Color tertiary = Color(0xFF9098B1);
   static const Color surface = Color(0xFFFFFFFF);
   static const Color onBackground = Color(0xFF000000);
