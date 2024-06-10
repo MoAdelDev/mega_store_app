@@ -15,7 +15,7 @@ class WriteReviewScreen extends StatefulWidget {
 }
 
 class _WriteReviewScreenState extends State<WriteReviewScreen> {
-  int rating = 1;
+  int rating = 0;
   final TextEditingController reviewController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -97,6 +97,18 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
               verticalSpace(10),
               CustomButton(
                 onPressed: () {
+                  if (reviewController.text.isEmpty || rating == 0) {
+                    final snackBar = SnackBar(
+                      content: CustomText(
+                        'Please write your review and rate it',
+                        style: context.textTheme.labelMedium,
+                        color: context.colorScheme.onPrimary,
+                      ),
+                      backgroundColor: context.colorScheme.error,
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    return;
+                  }
                   context.pop();
                 },
                 label: 'Send Review',
