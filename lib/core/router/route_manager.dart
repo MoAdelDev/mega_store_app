@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mega_store_app/core/router/routes.dart';
+import 'package:mega_store_app/features/catgeory_products/category_products_screen.dart';
 import 'package:mega_store_app/features/home/home_screen.dart';
 import 'package:mega_store_app/features/login/forget_password_screen.dart';
 import 'package:mega_store_app/features/login/login_screen.dart';
@@ -19,6 +20,9 @@ class RouteManager {
 
       case Routes.home:
         return _getMaterialPageRoute(const HomeScreen());
+
+      case Routes.categoryProducts:
+        return _getMaterialPageRoute(const CategoryProductsScreen());
 
       default:
         {
