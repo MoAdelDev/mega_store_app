@@ -10,4 +10,6 @@ class Routes {
   static const String productDetails = '/product-details';
 
   static const String productReviews = '/product-reviews';
+
+  static const String writeReview = '/write-review';
 }
