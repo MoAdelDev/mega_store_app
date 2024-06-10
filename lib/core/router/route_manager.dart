@@ -7,6 +7,7 @@ import 'package:mega_store_app/features/login/login_screen.dart';
 import 'package:mega_store_app/features/product_details/product_details_screen.dart';
 import 'package:mega_store_app/features/product_reviews/product_reviews_screen.dart';
 import 'package:mega_store_app/features/register/register_screen.dart';
+import 'package:mega_store_app/features/write_review/write_review_screen.dart';
 
 class RouteManager {
   Route? onGenerateRoute(RouteSettings settings) {
@@ -31,6 +32,9 @@ class RouteManager {
 
       case Routes.productReviews:
         return _getMaterialPageRoute(const ProductReviewsScreen());
+
+      case Routes.writeReview:
+        return _getMaterialPageRoute(const WriteReviewScreen());
 
       default:
         {

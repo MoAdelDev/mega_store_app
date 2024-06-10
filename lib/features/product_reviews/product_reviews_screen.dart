@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
+import 'package:mega_store_app/core/router/routes.dart';
 import 'package:mega_store_app/core/style/custom_shimmer.dart';
 import 'package:mega_store_app/core/style/font_weight_helper.dart';
 import 'package:mega_store_app/core/widgets/custom_button.dart';
@@ -162,7 +163,9 @@ class _ProductReviewsScreenState extends State<ProductReviewsScreen> {
               ),
               verticalSpace(12),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(Routes.writeReview);
+                },
                 label: 'Write Review',
                 backgroundColor: context.colorScheme.secondary,
               ),
