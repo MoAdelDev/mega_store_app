@@ -28,12 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     Icons.favorite_outline,
   ];
 
-  final List<IconData> iconsFilled = [
-    Icons.home_filled,
-    Icons.person,
-    Icons.local_offer,
-    Icons.favorite,
-  ];
   final List<Widget> screens = [
     const ProductsScreen(),
     Container(),
