@@ -169,6 +169,7 @@ class _ProductReviewsScreenState extends State<ProductReviewsScreen> {
                 label: 'Write Review',
                 backgroundColor: context.colorScheme.secondary,
               ),
+              verticalSpace(10),
             ],
           ),
         ),

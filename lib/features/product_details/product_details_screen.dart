@@ -67,7 +67,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 onPressed: () {},
                 label: 'Add To Cart',
                 backgroundColor: context.colorScheme.secondary,
-              )
+              ),
+              verticalSpace(10),
             ],
           ),
         ),

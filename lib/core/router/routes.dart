@@ -12,4 +12,6 @@ class Routes {
   static const String productReviews = '/product-reviews';
 
   static const String writeReview = '/write-review';
+
+  static const String search = '/search';
 }
