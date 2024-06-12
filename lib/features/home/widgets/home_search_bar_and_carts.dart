@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store_app/core/helpers/extensions.dart';
 import 'package:mega_store_app/core/helpers/spacing.dart';
+import 'package:mega_store_app/core/router/routes.dart';
 import 'package:mega_store_app/core/widgets/custom_text.dart';
 import 'package:mega_store_app/core/widgets/custom_text_field.dart';
 
@@ -28,6 +29,7 @@ class _HomeSearchBarAndCartsState extends State<HomeSearchBarAndCarts> {
             textInputAction: TextInputAction.search,
             onSubmit: (p0) {
               FocusManager.instance.primaryFocus?.unfocus();
+              context.push(Routes.search);
             },
           ),
         ),
